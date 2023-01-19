@@ -3,7 +3,7 @@ CardMarket Scraper to fetch MTG card prices and keep track of price changes insi
 
 ---
 ## Requirements & Notes
-Python 3.10
+Python 3.10 (no other versions were tested)
 
 Windows 10 (no other OS were tested)
 
