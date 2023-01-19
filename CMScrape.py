@@ -16,6 +16,7 @@ def check_card_prices():
     price = []
 
     with open('./data/urls.txt') as file:
+        print('* Start fetching url data. This may take a while.\n')
         for line in file:
             url = line.rstrip()
             if url == "":
@@ -54,9 +55,10 @@ def check_card_prices():
             language.append(temp.find_next('span', class_='icon mr-2')['data-original-title'])
             # Add card price to list
             price.append(article.find_next('span', class_='font-weight-bold color-primary small text-right text-nowrap').text)
-            print(url + ' - Done')
+            print('* ' + url + ' - Done')
 
     # Pandas dataframe for xlsx storing
+    print('\n* Writing data to .xlsx file.')
     df = pd.DataFrame(
         {'Name:': name, 'Price:': price, 'Condition:': condition, 'Expansion:': expansion, 'Language:': language,
          'Seller:': seller, 'Rarity:': rarity})
@@ -69,6 +71,13 @@ def check_card_prices():
     book = load_workbook(filepath_excel)
     date = datetime.now().strftime("%d.%m.%Y - %H%M")
     book.create_sheet(date, 0)
+    while True:
+      try:
+        book.save(filepath_excel)
+        break
+      except IOError:
+        input("* Could not save cardprices.xlsx. Please close the file and press Enter to retry.")
+
     book.save(filepath_excel)
 
     writer = pd.ExcelWriter(filepath_excel, engine='openpyxl', mode='a', if_sheet_exists='replace')
@@ -159,4 +168,4 @@ if __name__ == '__main__':
     check_card_prices()
     format_xlsx()
     compare_price_changes()
-    print('\n**************** Task completed ****************')
+    print('* Script successfully completed.')
