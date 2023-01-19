@@ -22,14 +22,16 @@ Open `./data/urls.txt` with any editor, copy in url's like the following one and
 
 In case there is no `./data/cardprices.xlsx` inside the folder simply create one inside there with the exact same name.
 
+### Run as Python Script
 Open `cmd` or `PowerShell` and change the working directory with `cd` to the folder the zip was extracted to.
 After that run the following two code lines. The first one installs all necessary packages. The second one executes the python script.
 ```
 $ python -m pip install -r requirements.txt
 $ python CMScrape.py
 ```
-For each url in `./data/urls.txt` a completion/failed message will be displayed in the `cmd` or `PowerShell` window. Once every url has been
-parsed a task completed will be shown.
+
+### Run as Executable
+Simply run the CMScrape.exe downloaded with the zip file.
 
 
 ## Example urls.txt input and cardprices.xlsx output
