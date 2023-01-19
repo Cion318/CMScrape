@@ -64,7 +64,7 @@ def check_card_prices():
     df.sort_values(by=['Name:'], inplace=True)
     df.reset_index(drop=True, inplace=True)
 
-    # Excel port 
+    # Excel port
     filepath_excel = r"./data/cardprices.xlsx"
     book = load_workbook(filepath_excel)
     date = datetime.now().strftime("%d.%m.%Y - %H%M")
@@ -159,3 +159,4 @@ if __name__ == '__main__':
     check_card_prices()
     format_xlsx()
     compare_price_changes()
+    print('\n**************** Task completed ****************')
