@@ -30,9 +30,6 @@ $ python -m pip install -r requirements.txt
 $ python CMScrape.py
 ```
 
-### Run as Executable
-Simply run the CMScrape.exe downloaded with the zip file.
-
 
 ## Example urls.txt input and cardprices.xlsx output
 ![alt text](https://i.imgur.com/LVU6rjQ.png)
