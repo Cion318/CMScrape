@@ -27,5 +27,3 @@ $ python CMScrape.py
 For each url in `./data/urls.txt` a completion/failed message will be displayed in the `cmd` or `PowerShell` window. Once every url has been
 parsed a task completed will be shown.
 
-### Hints
-Make sure to close the .xlsx file before attempting to run the script. Otherwise an error message will be thrown.
